@@ -1,0 +1,17 @@
+services:
+  pihole:
+    image: pihole/pihole:latest
+    container_name: pihole
+    hostname: pihole
+    network_mode: "host"
+
+    environment:
+      TZ: "Europe/Madrid"
+      WEBPASSWORD: ${PIHOLE_PASSWORD}
+      PIHOLE_DNS_: "${PIHOLE_DNS1};${PIHOLE_DNS2}"
+      WEB_PORT: ${PIHOLE_PORT}
+    volumes:
+      - ${PIHOLE_ETC}:/etc/pihole
+      - ${PIHOLE_DNSMASQ}:/etc/dnsmasq.d
+
+    restart: unless-stopped

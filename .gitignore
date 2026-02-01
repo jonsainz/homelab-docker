@@ -1,0 +1,35 @@
+# Secretos
+**/.env
+*.env
+**/*.key
+**/*.crt
+
+# Excepto ejemplos
+!**/.env.example
+
+# Docker Data (carpetas enteras)
+**/data/
+**/db/
+**/config/
+**/cache/
+**/etc-pihole/
+**/etc-dnsmasq.d/
+**/beszel_data/
+**/mariadb/
+**/nextcloud/data/
+
+# Archivos sueltos de DB y logs
+*.db
+*.db-shm
+*.db-wal
+*.log
+*.out
+aria_log*
+ib_*
+ibdata*
+multi-master.info
+mysql_upgrade_info
+
+# OS stuff
+.DS_Store
+Thumbs.db
